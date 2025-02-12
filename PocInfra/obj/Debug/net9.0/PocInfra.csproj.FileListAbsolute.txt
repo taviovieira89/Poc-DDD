@@ -1,0 +1,15 @@
+C:\GIT\Projetos\Poc-Teste\PocInfra\obj\Debug\net9.0\PocInfra.csproj.AssemblyReference.cache
+C:\GIT\Projetos\Poc-Teste\PocInfra\obj\Debug\net9.0\PocInfra.GeneratedMSBuildEditorConfig.editorconfig
+C:\GIT\Projetos\Poc-Teste\PocInfra\obj\Debug\net9.0\PocInfra.AssemblyInfoInputs.cache
+C:\GIT\Projetos\Poc-Teste\PocInfra\obj\Debug\net9.0\PocInfra.AssemblyInfo.cs
+C:\GIT\Projetos\Poc-Teste\PocInfra\obj\Debug\net9.0\PocInfra.csproj.CoreCompileInputs.cache
+C:\GIT\Projetos\Poc-Teste\PocInfra\bin\Debug\net9.0\PocInfra.deps.json
+C:\GIT\Projetos\Poc-Teste\PocInfra\bin\Debug\net9.0\PocInfra.dll
+C:\GIT\Projetos\Poc-Teste\PocInfra\bin\Debug\net9.0\PocInfra.pdb
+C:\GIT\Projetos\Poc-Teste\PocInfra\bin\Debug\net9.0\PocDomain.dll
+C:\GIT\Projetos\Poc-Teste\PocInfra\bin\Debug\net9.0\PocDomain.pdb
+C:\GIT\Projetos\Poc-Teste\PocInfra\obj\Debug\net9.0\PocInfra.csproj.Up2Date
+C:\GIT\Projetos\Poc-Teste\PocInfra\obj\Debug\net9.0\PocInfra.dll
+C:\GIT\Projetos\Poc-Teste\PocInfra\obj\Debug\net9.0\refint\PocInfra.dll
+C:\GIT\Projetos\Poc-Teste\PocInfra\obj\Debug\net9.0\PocInfra.pdb
+C:\GIT\Projetos\Poc-Teste\PocInfra\obj\Debug\net9.0\ref\PocInfra.dll
