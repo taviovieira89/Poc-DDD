@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using PocCrossCutting.PocDependencies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,17 +16,10 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Minha API", Version = "v1" });
 });
 
-builder.Services.AddScoped<ICreateClienteUseCase, CreateClienteUseCase>();
-builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ContextDb>(options => options.UseSqlServer(connectionString));
+builder.Services.AddInfrastructure(builder.Configuration);
 
-// Lendo configurações do Kafka
-var kafkaConfig = builder.Configuration.GetSection("Kafka").Get<IntegrationEvent>();
 
-// Registrando o producer como um Singleton
-builder.Services.AddSingleton(typeof(ResultProducer<>), sp => new ResultProducer<object>(kafkaConfig));
 
 builder.Services.AddAuthorization();
 builder.Services.AddLogging();

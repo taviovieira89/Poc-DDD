@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PM2Eui3cbr0=",
+  "dgSpecHash": "iHgBG4vpDwM=",
   "success": true,
-  "projectFilePath": "C:\\GIT\\Projetos\\Poc-Teste\\PocDomain\\PocDomain.csproj",
+  "projectFilePath": "C:\\GIT\\Projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tavioaraujo\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\tavioaraujo\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
@@ -100,7 +100,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Versão detectada do pacote fora da restrição de dependência: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requer MediatR (>= 11.0.0 && < 12.0.0), mas a versão MediatR 12.4.1 foi resolvida.",
+      "message": "Detected package version outside of dependency constraint: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requires MediatR (>= 11.0.0 && < 12.0.0) but version MediatR 12.4.1 was resolved.",
       "libraryId": "MediatR",
       "targetGraphs": [
         "net9.0"

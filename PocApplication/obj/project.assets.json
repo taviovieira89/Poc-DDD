@@ -4491,11 +4491,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GIT\\Projetos\\Poc-Teste\\PocApplication\\PocApplication.csproj",
+      "projectUniqueName": "C:\\GIT\\Projetos\\Poc-DDD\\PocApplication\\PocApplication.csproj",
       "projectName": "PocApplication",
-      "projectPath": "C:\\GIT\\Projetos\\Poc-Teste\\PocApplication\\PocApplication.csproj",
+      "projectPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocApplication\\PocApplication.csproj",
       "packagesPath": "C:\\Users\\tavioaraujo\\.nuget\\packages\\",
-      "outputPath": "C:\\GIT\\Projetos\\Poc-Teste\\PocApplication\\obj\\",
+      "outputPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocApplication\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tavioaraujo\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -4511,11 +4511,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\GIT\\Projetos\\Poc-Teste\\PocDomain\\PocDomain.csproj": {
-              "projectPath": "C:\\GIT\\Projetos\\Poc-Teste\\PocDomain\\PocDomain.csproj"
+            "C:\\GIT\\Projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj": {
+              "projectPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj"
             },
-            "C:\\GIT\\Projetos\\Poc-Teste\\PocInfra\\PocInfra.csproj": {
-              "projectPath": "C:\\GIT\\Projetos\\Poc-Teste\\PocInfra\\PocInfra.csproj"
+            "C:\\GIT\\Projetos\\Poc-DDD\\PocInfra\\PocInfra.csproj": {
+              "projectPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocInfra\\PocInfra.csproj"
             }
           }
         }

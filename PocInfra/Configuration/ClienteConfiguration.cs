@@ -10,9 +10,20 @@ public class ClienteConfiguration : IEntityTypeConfiguration<Cliente>
         builder.HasKey(c => c.IdCliente);
 
         // Configura a propriedade Nome
-        builder.Property(c => c.Nome)
-               .IsRequired() // Obrigatório
-               .HasMaxLength(100); // Tamanho máximo de 100 caracteres
+        builder.OwnsOne(c => c.Nome, nome =>
+        {
+            nome.Property(n => n.Value)
+            .IsRequired() 
+            .HasMaxLength(100);  
+        });
+
+        // Configura a propriedade Nascimento como Value Object
+        builder.OwnsOne(c => c.Nascimento, nascimento =>
+        {
+            nascimento.Property(n => n.Value)
+                  .IsRequired()
+                  .HasColumnType("datetime");  // Define o tipo da coluna no banco de dados
+        });
 
         // // Configura a propriedade Email
         // builder.Property(c => c.Email)

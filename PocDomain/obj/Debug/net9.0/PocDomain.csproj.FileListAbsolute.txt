@@ -10,3 +10,16 @@ C:\GIT\Projetos\Poc-Teste\PocDomain\obj\Debug\net9.0\PocDomain.dll
 C:\GIT\Projetos\Poc-Teste\PocDomain\obj\Debug\net9.0\refint\PocDomain.dll
 C:\GIT\Projetos\Poc-Teste\PocDomain\obj\Debug\net9.0\PocDomain.pdb
 C:\GIT\Projetos\Poc-Teste\PocDomain\obj\Debug\net9.0\ref\PocDomain.dll
+C:\GIT\Projetos\Poc-DDD\PocDomain\bin\Debug\net9.0\PocDomain.deps.json
+C:\GIT\Projetos\Poc-DDD\PocDomain\bin\Debug\net9.0\PocDomain.dll
+C:\GIT\Projetos\Poc-DDD\PocDomain\bin\Debug\net9.0\PocDomain.pdb
+C:\GIT\Projetos\Poc-DDD\PocDomain\obj\Debug\net9.0\PocDomain.csproj.AssemblyReference.cache
+C:\GIT\Projetos\Poc-DDD\PocDomain\obj\Debug\net9.0\PocDomain.GeneratedMSBuildEditorConfig.editorconfig
+C:\GIT\Projetos\Poc-DDD\PocDomain\obj\Debug\net9.0\PocDomain.AssemblyInfoInputs.cache
+C:\GIT\Projetos\Poc-DDD\PocDomain\obj\Debug\net9.0\PocDomain.AssemblyInfo.cs
+C:\GIT\Projetos\Poc-DDD\PocDomain\obj\Debug\net9.0\PocDomain.csproj.CoreCompileInputs.cache
+C:\GIT\Projetos\Poc-DDD\PocDomain\obj\Debug\net9.0\PocDomain.sourcelink.json
+C:\GIT\Projetos\Poc-DDD\PocDomain\obj\Debug\net9.0\PocDomain.dll
+C:\GIT\Projetos\Poc-DDD\PocDomain\obj\Debug\net9.0\refint\PocDomain.dll
+C:\GIT\Projetos\Poc-DDD\PocDomain\obj\Debug\net9.0\PocDomain.pdb
+C:\GIT\Projetos\Poc-DDD\PocDomain\obj\Debug\net9.0\ref\PocDomain.dll

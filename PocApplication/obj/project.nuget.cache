@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GUHtHSsSZd0=",
+  "dgSpecHash": "RdItqrB929g=",
   "success": true,
-  "projectFilePath": "C:\\GIT\\Projetos\\Poc-Teste\\PocApplication\\PocApplication.csproj",
+  "projectFilePath": "C:\\GIT\\Projetos\\Poc-DDD\\PocApplication\\PocApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tavioaraujo\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\tavioaraujo\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

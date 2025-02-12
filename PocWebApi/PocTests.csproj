@@ -15,8 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PocDomain\PocDomain.csproj" />
-    <ProjectReference Include="..\PocApplication\PocApplication.csproj" />
-    <ProjectReference Include="..\PocInfra\PocInfra.csproj" />
+    <ProjectReference Include="..\PocCrossCutting\PocCrossCutting.csproj" />
   </ItemGroup>
 
 </Project>

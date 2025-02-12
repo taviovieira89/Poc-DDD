@@ -1,7 +1,9 @@
 public class CreateClienteDto
 {
-     public Guid IdCliente { get; private set; } 
+     public Guid IdCliente { get; set; } 
      
-     public string Nome { get; private set; }
+     public string Nome { get;  set; }
+
+     public DateTime Nascimento { get;  set; }
 
 }

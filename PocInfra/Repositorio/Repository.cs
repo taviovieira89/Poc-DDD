@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 public class Repositorio<T> : IRepositories<T> where T : class
 {
-    protected readonly ContextDb _context; // Contexto do banco de dados
+    protected readonly PocContext _context; // Contexto do banco de dados
 
-    public Repositorio(ContextDb context)
+    public Repositorio(PocContext context)
     {
         _context = context;
     }
