@@ -13,13 +13,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Minha API", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Poc API", Version = "v1" });
 });
 
 
 builder.Services.AddInfrastructure(builder.Configuration);
-
-
 
 builder.Services.AddAuthorization();
 builder.Services.AddLogging();

@@ -49,3 +49,21 @@ public static class DependencyInjection
         return services;
     }
 }
+
+public class PocContextFactory : IDesignTimeDbContextFactory<PocContext>
+{
+    public PocContext CreateDbContext(string[] args)
+    {
+        IConfigurationRoot configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory()) // Define a pasta do projeto
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .Build();
+
+        var connectionString = configuration.GetConnectionString("DefaultConnection");
+
+        var optionsBuilder = new DbContextOptionsBuilder<PocContext>();
+        optionsBuilder.UseSqlServer(connectionString); // Ajuste para seu banco (SQL Server, MySQL, etc.)
+
+        return new PocContext(optionsBuilder.Options);
+    }
+}

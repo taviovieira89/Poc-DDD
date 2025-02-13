@@ -2,9 +2,12 @@ using PocDomain.Aggregate.Cliente;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
-public class PocContext : ContextDb
+using System.IO;
+public class PocContext : DbContext
 {
-    public PocContext(DbContextOptions<ContextDb> options) : base(options) // Aqui, passe o tipo correto para a base
+    //public PocContext(){}
+
+    public PocContext(DbContextOptions<PocContext> options) : base(options) // Aqui, passe o tipo correto para a base
     {
     }
     public DbSet<Cliente> Clientes { get; set; }
@@ -16,6 +19,4 @@ public class PocContext : ContextDb
         base.OnModelCreating(modelBuilder);
     }
 }
-
-
 
