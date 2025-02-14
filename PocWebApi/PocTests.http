@@ -1,6 +1,0 @@
-@PocTests_HostAddress = http://localhost:5134
-
-GET {{PocTests_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
