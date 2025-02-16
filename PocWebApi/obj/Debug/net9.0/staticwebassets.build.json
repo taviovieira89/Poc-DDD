@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "bRU2M7PWn6VCzMmqm2dNdx6wq4NPHxe58wd8iB1QWi8=",
-  "Source": "PocTests",
-  "BasePath": "_content/PocTests",
+  "Hash": "HEih8B08q2/Rtm4Hn7L+VJEz6x7nLcwtU/oLDRSS+go=",
+  "Source": "PocWebApi",
+  "BasePath": "_content/PocWebApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

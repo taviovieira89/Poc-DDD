@@ -14,7 +14,10 @@ public class CreatedClienteDomainHandler : INotificationHandler<CreateClienteDom
     }
 
     public async Task Handle(CreateClienteDomain notification, CancellationToken cancellationToken)
-    {       
+    {
+        var clienteExiste = Task.Run(() => _repository.GetAllAsync()).Result.Where(x=>x.IdCliente == notification.IdCliente).Any();
+
+
        await _producer.SendMessageAsync(notification , _envelope.Topic);
     }
 }

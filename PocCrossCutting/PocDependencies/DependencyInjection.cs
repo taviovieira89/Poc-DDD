@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Data;
 using System.Reflection;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore.Design;
 
 namespace PocCrossCutting.PocDependencies;
 
@@ -21,7 +22,7 @@ public static class DependencyInjection
         services.AddDbContext<PocContext>(options => options.UseSqlServer(connectionString));
 
         // Lendo configurações do Kafka
-        var kafkaConfig = builder.Configuration.GetSection("Kafka").Get<IntegrationEvent>();
+        var kafkaConfig = configuration.GetSection("Kafka").Get<IntegrationEvent>();
 
        // Registrando o producer como um Singleton
        services.AddSingleton(typeof(ResultProducer<>), sp => new ResultProducer<object>(kafkaConfig!));
