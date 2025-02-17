@@ -4,9 +4,9 @@ public class Cliente : AggregateRoot
 {
      public Guid IdCliente { get; private set; } 
      
-     public Name Nome { get; private set; }
+     public Name Nome { get; private set; } =default!;
 
-     public BirthDate Nascimento  { get; private set; }
+     public BirthDate Nascimento  { get; private set; }=default!;
 
      public virtual  bool MaiorIdade() => (DateTime.Now - this.Nascimento.Value).TotalDays / 365.25 >= 18;
 

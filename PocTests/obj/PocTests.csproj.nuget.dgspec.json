@@ -1,32 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Git\\projetos\\Poc-DDD\\PocTests\\PocTests.csproj": {}
+    "C:\\GIT\\Projetos\\Poc-DDD\\PocTests\\PocTests.csproj": {}
   },
   "projects": {
-    "C:\\Git\\projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj": {
+    "C:\\GIT\\Projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Git\\projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj",
+        "projectUniqueName": "C:\\GIT\\Projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj",
         "projectName": "PocDomain",
-        "projectPath": "C:\\Git\\projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj",
-        "packagesPath": "C:\\Users\\tavio\\.nuget\\packages\\",
-        "outputPath": "C:\\Git\\projetos\\Poc-DDD\\PocDomain\\obj\\",
+        "projectPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj",
+        "packagesPath": "C:\\Users\\tavioaraujo\\.nuget\\packages\\",
+        "outputPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocDomain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Git\\projetos\\Poc-DDD\\NuGet.Config",
-          "C:\\Users\\tavio\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\GIT\\Projetos\\Poc-DDD\\NuGet.Config",
+          "C:\\Users\\tavioaraujo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://nuget.pkg.github.com/taviovieira89/index.json": {}
         },
@@ -46,7 +40,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -73,33 +67,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Git\\projetos\\Poc-DDD\\PocTests\\PocTests.csproj": {
+    "C:\\GIT\\Projetos\\Poc-DDD\\PocTests\\PocTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Git\\projetos\\Poc-DDD\\PocTests\\PocTests.csproj",
+        "projectUniqueName": "C:\\GIT\\Projetos\\Poc-DDD\\PocTests\\PocTests.csproj",
         "projectName": "PocTests",
-        "projectPath": "C:\\Git\\projetos\\Poc-DDD\\PocTests\\PocTests.csproj",
-        "packagesPath": "C:\\Users\\tavio\\.nuget\\packages\\",
-        "outputPath": "C:\\Git\\projetos\\Poc-DDD\\PocTests\\obj\\",
+        "projectPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocTests\\PocTests.csproj",
+        "packagesPath": "C:\\Users\\tavioaraujo\\.nuget\\packages\\",
+        "outputPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocTests\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Git\\projetos\\Poc-DDD\\NuGet.Config",
-          "C:\\Users\\tavio\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\GIT\\Projetos\\Poc-DDD\\NuGet.Config",
+          "C:\\Users\\tavioaraujo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://nuget.pkg.github.com/taviovieira89/index.json": {}
         },
@@ -107,8 +95,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Git\\projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj": {
-                "projectPath": "C:\\Git\\projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj"
+              "C:\\GIT\\Projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj": {
+                "projectPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj"
               }
             }
           }
@@ -123,7 +111,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -150,7 +138,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

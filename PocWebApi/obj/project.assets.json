@@ -1796,7 +1796,7 @@
           "Microsoft.Extensions.Configuration.FileExtensions": "9.0.2",
           "Microsoft.Extensions.Configuration.Json": "9.0.2",
           "PocDomain": "1.0.0",
-          "ToolKit": "1.0.0"
+          "ToolKit": "1.0.1"
         },
         "compile": {
           "bin/placeholder/PocInfra.dll": {}
@@ -4471,32 +4471,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tavio\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\tavioaraujo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Git\\projetos\\Poc-DDD\\PocWebApi\\PocWebApi.csproj",
+      "projectUniqueName": "C:\\GIT\\Projetos\\Poc-DDD\\PocWebApi\\PocWebApi.csproj",
       "projectName": "PocWebApi",
-      "projectPath": "C:\\Git\\projetos\\Poc-DDD\\PocWebApi\\PocWebApi.csproj",
-      "packagesPath": "C:\\Users\\tavio\\.nuget\\packages\\",
-      "outputPath": "C:\\Git\\projetos\\Poc-DDD\\PocWebApi\\obj\\",
+      "projectPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocWebApi\\PocWebApi.csproj",
+      "packagesPath": "C:\\Users\\tavioaraujo\\.nuget\\packages\\",
+      "outputPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocWebApi\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Git\\projetos\\Poc-DDD\\NuGet.Config",
-        "C:\\Users\\tavio\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\GIT\\Projetos\\Poc-DDD\\NuGet.Config",
+        "C:\\Users\\tavioaraujo\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {},
         "https://nuget.pkg.github.com/taviovieira89/index.json": {}
       },
@@ -4504,11 +4497,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Git\\projetos\\Poc-DDD\\PocCrossCutting\\PocCrossCutting.csproj": {
-              "projectPath": "C:\\Git\\projetos\\Poc-DDD\\PocCrossCutting\\PocCrossCutting.csproj"
+            "C:\\GIT\\Projetos\\Poc-DDD\\PocCrossCutting\\PocCrossCutting.csproj": {
+              "projectPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocCrossCutting\\PocCrossCutting.csproj"
             },
-            "C:\\Git\\projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj": {
-              "projectPath": "C:\\Git\\projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj"
+            "C:\\GIT\\Projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj": {
+              "projectPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj"
             }
           }
         }
@@ -4523,7 +4516,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net9.0": {
@@ -4565,7 +4558,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
@@ -4574,8 +4567,17 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Versão detectada do pacote fora da restrição de dependência: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requer MediatR (>= 11.0.0 && < 12.0.0), mas a versão MediatR 12.4.1 foi resolvida.",
+      "message": "Detected package version outside of dependency constraint: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requires MediatR (>= 11.0.0 && < 12.0.0) but version MediatR 12.4.1 was resolved.",
       "libraryId": "MediatR",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Detected package downgrade: ToolKit from 1.0.1 to 1.0.0. Reference the package directly from the project to select a different version. \r\n PocWebApi -> PocCrossCutting -> PocInfra -> ToolKit (>= 1.0.1) \r\n PocWebApi -> Toolkit (>= 1.0.0)",
+      "libraryId": "ToolKit",
       "targetGraphs": [
         "net9.0"
       ]

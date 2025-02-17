@@ -7,10 +7,12 @@ public class CreatedClienteDomainHandler : INotificationHandler<CreateClienteDom
     
     public CreatedClienteDomainHandler(
         IClienteRepository repository, 
-        ResultProducer<CreateClienteDomain> producer)
+        ResultProducer<CreateClienteDomain> producer,
+        ClienteEnvelope envelope)
     {
        _repository = repository;
        _producer = producer;
+       _envelope = envelope;
     }
 
     public async Task Handle(CreateClienteDomain notification, CancellationToken cancellationToken)
