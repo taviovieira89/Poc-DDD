@@ -7,13 +7,14 @@ public class ClienteConfiguration : IEntityTypeConfiguration<Cliente>
     public void Configure(EntityTypeBuilder<Cliente> builder)
     {
         // Define a chave primária
-        builder.HasKey(c => c.IdCliente);
+        builder.HasKey(c => c.IdCliente).HasName("ClienteId");
 
         // Configura a propriedade Nome
         builder.OwnsOne(c => c.Nome, nome =>
         {
             nome.Property(n => n.Value)
-            .IsRequired() 
+            .IsRequired()
+            .HasColumnName("Nome")
             .HasMaxLength(100);  
         });
 
@@ -22,6 +23,7 @@ public class ClienteConfiguration : IEntityTypeConfiguration<Cliente>
         {
             nascimento.Property(n => n.Value)
                   .IsRequired()
+                  .HasColumnName("Nascimento")
                   .HasColumnType("datetime");  // Define o tipo da coluna no banco de dados
         });
 

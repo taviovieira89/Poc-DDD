@@ -17,6 +17,7 @@ public class PocContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+        modelBuilder.ApplyConfiguration(new ClienteConfiguration());
     }
 }
 

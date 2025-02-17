@@ -24,8 +24,13 @@ public static class DependencyInjection
         // Lendo configurações do Kafka
         var kafkaConfig = configuration.GetSection("Kafka").Get<IntegrationEvent>();
 
+        services.AddSingleton(kafkaConfig!); // Adiciona a configuração como Singleton
+
+        services.AddScoped<ClienteEnvelope>();
+
+
        // Registrando o producer como um Singleton
-       services.AddSingleton(typeof(ResultProducer<>), sp => new ResultProducer<object>(kafkaConfig!));
+       //services.AddSingleton(typeof(ResultProducer<>), sp => new ResultProducer<object>(kafkaConfig!));
 
         // Registrar IDbConnection como uma instância única
       services.AddSingleton<IDbConnection>(provider =>
@@ -38,6 +43,7 @@ public static class DependencyInjection
         services.AddScoped<ICreateClienteUseCase, CreateClienteUseCase>();
         services.AddScoped<IClienteRepository, ClienteRepository>();
         services.AddScoped(typeof(IRepositories<>), typeof(Repository<>));
+        services.AddTransient(typeof(ResultProducer<>), typeof(ResultProducer<>));
 
         var myhandlers = AppDomain.CurrentDomain.Load("PocApplication");
         services.AddMediatR(cfg =>
@@ -51,20 +57,24 @@ public static class DependencyInjection
     }
 }
 
-// public class PocContextFactory : IDesignTimeDbContextFactory<PocContext>
-// {
-//     public PocContext CreateDbContext(string[] args)
-//     {
-//         IConfigurationRoot configuration = new ConfigurationBuilder()
-//             .SetBasePath(Directory.GetCurrentDirectory()) // Define a pasta do projeto
-//             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-//             .Build();
+public class PocContextFactory : IDesignTimeDbContextFactory<PocContext>
+{
+    public PocContext CreateDbContext(string[] args)
+    {
+        // Configuração para o arquivo appsettings.json
+        IConfigurationRoot configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory()) // Define a pasta onde o projeto está localizado
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .Build();
 
-//         var connectionString = configuration.GetConnectionString("DefaultConnection");
+        // Obtém a string de conexão
+        var connectionString = configuration.GetConnectionString("DefaultConnection");
 
-//         var optionsBuilder = new DbContextOptionsBuilder<PocContext>();
-//         optionsBuilder.UseSqlServer(connectionString); // Ajuste para seu banco (SQL Server, MySQL, etc.)
+        // Cria a instância do DbContextOptions
+        var optionsBuilder = new DbContextOptionsBuilder<PocContext>();
+        optionsBuilder.UseSqlServer(connectionString); // Ajuste para seu banco SQL Server
 
-//         return new PocContext(optionsBuilder.Options);
-//     }
-// }
+        return new PocContext(optionsBuilder.Options);
+    }
+}
+

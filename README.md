@@ -41,3 +41,9 @@ Antes de rodar a aplicação, você precisa configurar o banco de dados. O proje
    Execute o seguinte comando para levantar o ambiente de contêineres:
    ```bash
    docker-compose up -d
+
+2. **Migrations**: comandos pra geração do banco de dados.
+     Execute o seguinte comando no caminho do PocDDD para criar a pasta e o script:
+      -- dotnet ef migrations add NomeDaMigration --project PocInfra/PocInfra.csproj --startup-project PocWebAPI/PocWebAPI.csproj
+     Execute o seguinte comando para criar o banco de dados:
+     --  dotnet ef database update --startup-project PocWebAPI
