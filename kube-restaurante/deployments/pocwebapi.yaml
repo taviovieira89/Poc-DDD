@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pocwebapi-deployment
+  labels:
+    app: pocwebapi-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pocwebapi-api
+  template:
+    metadata:
+      labels: 
+        app: pocwebapi-api
+    spec:
+      containers:
+        - name: pocwebapi-api
+          image: 962752232059.dkr.ecr.us-east-1.amazonaws.com/pocwebapiservice:1.5
+          ports:
+            - containerPort: 80
+          env:
+            - name: ConnectionStrings__DefaultConnection
+              value: "server=pocddd.chpsm599tfcr.us-east-1.rds.amazonaws.com;database=pocddd;user=admin;password=Senhasecreta123"
+            - name: Kafka__BootstrapServers
+              value: "kafka-service:9092"
+            - name: Kafka__Topic
+              value: "PocDDD-Cliente"

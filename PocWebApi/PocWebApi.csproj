@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.2">
@@ -20,7 +21,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PocDomain\PocDomain.csproj" />
-    <ProjectReference Include="..\PocCrossCutting\PocCrossCutting.csproj" />
+    <ProjectReference Include="..\PocInfra\PocInfra.csproj" />
+    <ProjectReference Include="..\PocApplication\PocApplication.csproj" />
+    <!-- <ProjectReference Include="..\PocCrossCutting\PocCrossCutting.csproj" /> -->
   </ItemGroup>
 
 </Project>

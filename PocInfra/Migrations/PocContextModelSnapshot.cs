@@ -27,7 +27,8 @@ namespace PocInfra.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("IdCliente");
+                    b.HasKey("IdCliente")
+                        .HasName("ClienteId");
 
                     b.ToTable("Clientes");
                 });
@@ -40,7 +41,8 @@ namespace PocInfra.Migrations
                                 .HasColumnType("uniqueidentifier");
 
                             b1.Property<DateTime>("Value")
-                                .HasColumnType("datetime");
+                                .HasColumnType("datetime")
+                                .HasColumnName("Nascimento");
 
                             b1.HasKey("ClienteIdCliente");
 
@@ -58,7 +60,8 @@ namespace PocInfra.Migrations
                             b1.Property<string>("Value")
                                 .IsRequired()
                                 .HasMaxLength(100)
-                                .HasColumnType("nvarchar(100)");
+                                .HasColumnType("nvarchar(100)")
+                                .HasColumnName("Nome");
 
                             b1.HasKey("ClienteIdCliente");
 

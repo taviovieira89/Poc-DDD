@@ -13,13 +13,11 @@ public static class InstallerService
                   this IServiceCollection services,
                   IConfiguration configuration)
     {
-        // Lendo configurações do Kafka
-        var kafkaConfig = configuration.GetSection("Kafka").Get<IntegrationEvent>();
-       
-       if(kafkaConfig!=null){
-          // Registrando o producer como um Singleton
-          services.AddSingleton(typeof(ResultConsumer), sp => new ResultConsumer(kafkaConfig!));
-       }
+       var kafkaConfig = configuration.GetSection("Kafka").Get<IntegrationEvent>();
+
+        services.AddSingleton(kafkaConfig!); // Adiciona a configuração como Singleton
+
+        services.AddScoped<ClienteEnvelope>();
       return services;
     }
 

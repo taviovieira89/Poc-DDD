@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pocwebapi-lb
+spec:
+  type: LoadBalancer
+  selector:
+    app: pocwebapi-api
+  ports:
+    - port: 80
+      targetPort: 80

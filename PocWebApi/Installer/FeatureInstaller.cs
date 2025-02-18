@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -8,11 +8,10 @@ using System.Reflection;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace PocCrossCutting.PocDependencies;
+public static class FeatureInstaller{
 
-public static class DependencyInjection
-{
-    public static IServiceCollection AddInfrastructure(
+
+public static IServiceCollection AddFeature(
                   this IServiceCollection services,
                   IConfiguration configuration)
     {
@@ -27,10 +26,6 @@ public static class DependencyInjection
         services.AddSingleton(kafkaConfig!); // Adiciona a configuração como Singleton
 
         services.AddScoped<ClienteEnvelope>();
-
-
-       // Registrando o producer como um Singleton
-       //services.AddSingleton(typeof(ResultProducer<>), sp => new ResultProducer<object>(kafkaConfig!));
 
         // Registrar IDbConnection como uma instância única
       services.AddSingleton<IDbConnection>(provider =>
@@ -56,25 +51,3 @@ public static class DependencyInjection
         return services;
     }
 }
-
-public class PocContextFactory : IDesignTimeDbContextFactory<PocContext>
-{
-    public PocContext CreateDbContext(string[] args)
-    {
-        // Configuração para o arquivo appsettings.json
-        IConfigurationRoot configuration = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory()) // Define a pasta onde o projeto está localizado
-            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-            .Build();
-
-        // Obtém a string de conexão
-        var connectionString = configuration.GetConnectionString("DefaultConnection");
-
-        // Cria a instância do DbContextOptions
-        var optionsBuilder = new DbContextOptionsBuilder<PocContext>();
-        optionsBuilder.UseSqlServer(connectionString); // Ajuste para seu banco SQL Server
-
-        return new PocContext(optionsBuilder.Options);
-    }
-}
-

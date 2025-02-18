@@ -5,7 +5,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using PocCrossCutting.PocDependencies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +16,8 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 
-builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddFeature(builder.Configuration);
+//builder.Services.AddInfrastructure(builder.Configuration);
 
 builder.Services.AddAuthorization();
 builder.Services.AddLogging();
