@@ -8,46 +8,57 @@ using System.Reflection;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore.Design;
 
-public static class FeatureInstaller{
+public static class FeatureInstaller
+{
 
 
-public static IServiceCollection AddFeature(
-                  this IServiceCollection services,
-                  IConfiguration configuration)
+  public static IServiceCollection AddFeature(
+                    this IServiceCollection services,
+                    IConfiguration configuration)
+  {
+
+    var connectionString = configuration.GetConnectionString("DefaultConnection");
+
+    services.AddDbContext<PocContext>(options => options.UseSqlServer(connectionString));
+  
+    // Lendo configurações do Kafka
+    var kafkaConfig = configuration.GetSection("Kafka").Get<IntegrationEvent>();
+
+    services.AddSingleton(kafkaConfig!); // Adiciona a configuração como Singleton
+
+    services.AddScoped<ClienteEnvelope>();
+
+    // Registrar IDbConnection como uma instância única
+    services.AddSingleton<IDbConnection>(provider =>
     {
+      var connection = new SqlConnection(connectionString); // Usando SqlConnection para SQL Server
+      connection.Open();
+      return connection;
+    });
 
-        var connectionString = configuration.GetConnectionString("DefaultConnection");                      
+    services.AddScoped<IUnitOfWork>(sp =>
+{
+  var pocContext = sp.GetRequiredService<PocContext>();
+  var mediator = sp.GetRequiredService<IMediator>();
+  //var mongoDbContext = sp.GetRequiredService<MongoDbContext>();
 
-        services.AddDbContext<PocContext>(options => options.UseSqlServer(connectionString));
+  return new UnitOfWork<PocContext>(pocContext, mediator, null!);
+});
 
-        // Lendo configurações do Kafka
-        var kafkaConfig = configuration.GetSection("Kafka").Get<IntegrationEvent>();
 
-        services.AddSingleton(kafkaConfig!); // Adiciona a configuração como Singleton
+    services.AddScoped<ICreateClienteUseCase, CreateClienteUseCase>();
+    services.AddScoped<IClienteRepository, ClienteRepository>();
+    services.AddScoped(typeof(IRepositories<>), typeof(Repositorio<>));
+    services.AddTransient(typeof(ResultProducer<>), typeof(ResultProducer<>));
 
-        services.AddScoped<ClienteEnvelope>();
+    var myhandlers = AppDomain.CurrentDomain.Load("PocApplication");
+    services.AddMediatR(cfg =>
+    {
+      cfg.RegisterServicesFromAssemblies(myhandlers);
+    });
 
-        // Registrar IDbConnection como uma instância única
-      services.AddSingleton<IDbConnection>(provider =>
-      {
-        var connection = new SqlConnection(connectionString); // Usando SqlConnection para SQL Server
-        connection.Open();
-        return connection;
-      });
+    services.AddValidatorsFromAssembly(Assembly.Load("PocApplication"));
 
-        services.AddScoped<ICreateClienteUseCase, CreateClienteUseCase>();
-        services.AddScoped<IClienteRepository, ClienteRepository>();
-        services.AddScoped(typeof(IRepositories<>), typeof(Repository<>));
-        services.AddTransient(typeof(ResultProducer<>), typeof(ResultProducer<>));
-
-        var myhandlers = AppDomain.CurrentDomain.Load("PocApplication");
-        services.AddMediatR(cfg =>
-        {
-            cfg.RegisterServicesFromAssemblies(myhandlers);
-        });
-
-        services.AddValidatorsFromAssembly(Assembly.Load("PocApplication"));
-
-        return services;
-    }
+    return services;
+  }
 }

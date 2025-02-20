@@ -1733,7 +1733,7 @@
           }
         }
       },
-      "Toolkit/1.0.0": {
+      "Toolkit/1.0.1": {
         "type": "package",
         "dependencies": {
           "Confluent.Kafka": "2.8.0",
@@ -4409,15 +4409,15 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Toolkit/1.0.0": {
-      "sha512": "hlYeQKKhEUX8J5yIXnC/Thm7v8L/cakX6qJEsSR4d3O6WxMAkLN5zrtaxH3IDZqL/Mb9JOo+RV4YFEHhCd0VMQ==",
+    "Toolkit/1.0.1": {
+      "sha512": "IHHUyrNqbldUoGdpjHmMk+p8LGVqHqo+yudS9NRu04CPXmsEa+f4r1YWb39mOS1xbni/o0Iw5lCW+5VGMiihLg==",
       "type": "package",
-      "path": "toolkit/1.0.0",
+      "path": "toolkit/1.0.1",
       "files": [
         ".nupkg.metadata",
         "lib/net9.0/ExampleToolKit.dll",
         "lib/net9.0/ExampleToolKit.runtimeconfig.json",
-        "toolkit.1.0.0.nupkg.sha512",
+        "toolkit.1.0.1.nupkg.sha512",
         "toolkit.nuspec"
       ]
     },
@@ -4442,7 +4442,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "ToolKit >= 1.0.0"
+      "ToolKit >= 1.0.1"
     ]
   },
   "packageFolders": {
@@ -4492,7 +4492,7 @@
         "dependencies": {
           "ToolKit": {
             "target": "Package",
-            "version": "[1.0.0, )"
+            "version": "[1.0.1, )"
           }
         },
         "imports": [

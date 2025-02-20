@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "M5SBkkMqijw=",
+  "dgSpecHash": "0my5SOk2/DI=",
   "success": true,
   "projectFilePath": "C:\\GIT\\Projetos\\Poc-DDD\\PocApplication\\PocApplication.csproj",
   "expectedPackageFiles": [
@@ -92,7 +92,7 @@
     "C:\\Users\\tavioaraujo\\.nuget\\packages\\system.text.json\\9.0.2\\system.text.json.9.0.2.nupkg.sha512",
     "C:\\Users\\tavioaraujo\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\tavioaraujo\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
-    "C:\\Users\\tavioaraujo\\.nuget\\packages\\toolkit\\1.0.1\\toolkit.1.0.1.nupkg.sha512",
+    "C:\\Users\\tavioaraujo\\.nuget\\packages\\toolkit\\1.0.3\\toolkit.1.0.3.nupkg.sha512",
     "C:\\Users\\tavioaraujo\\.nuget\\packages\\zstdsharp.port\\0.7.3\\zstdsharp.port.0.7.3.nupkg.sha512"
   ],
   "logs": [

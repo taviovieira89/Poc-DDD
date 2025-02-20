@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace PocInfra.Migrations
 {
     /// <inheritdoc />
-    public partial class NomeDaMigration : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,13 +15,13 @@ namespace PocInfra.Migrations
                 name: "Clientes",
                 columns: table => new
                 {
-                    ClienteId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    IdCliente = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Nome = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Nascimento = table.Column<DateTime>(type: "datetime", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Clientes", x => x.ClienteId);
+                    table.PrimaryKey("ClienteId", x => x.IdCliente);
                 });
         }
 

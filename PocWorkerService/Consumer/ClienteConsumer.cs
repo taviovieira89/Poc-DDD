@@ -6,32 +6,29 @@ using System.Threading.Tasks;
 
 namespace PocWorkerService.Consumer
 {
-    public class ClienteConsumer
+    public class ClienteConsumer : IKafkaConsumer<IntegrationEvent>
     {
         private readonly ResultConsumer _consumer;
-        private CancellationTokenSource _cts;
-        public ClienteConsumer(ClienteEnvelope envelope)
+        private readonly ILogger<ClienteConsumer> _logger;
+        public ClienteConsumer(ClienteEnvelope envelope,
+        ILogger<ClienteConsumer> logger)
         {
-            _consumer = new ResultConsumer(envelope);
-            _cts = new CancellationTokenSource();
+            _consumer = new ResultConsumer(ClienteEnvelope.PassValue(envelope));
+            _logger = logger;
+            _logger.LogInformation($"Topic : {envelope.Topic},GroupId: {envelope.GroupId}, BootstrapServers: {envelope.BootstrapServers}");
         }
 
-        public async Task StartListening(CancellationToken cancellationToken)
+        public async Task ConsumeAsync(IntegrationEvent message, CancellationToken cancellationToken)
         {
             while (!cancellationToken.IsCancellationRequested)
             {
-                var envelope = await _consumer.ConsumeAndReturn(cancellationToken);
+                var result = await _consumer.ConsumeAndReturn(cancellationToken);
 
-                if (envelope != null)
+                if (result != null)
                 {
-                    Console.WriteLine($"[ClienteConsumer] Mensagem processada: Key={envelope.Key}, Value={envelope.Value}");
+                    _logger.LogInformation($"[ClienteConsumer] Mensagem processada: Key={result.Key}, Value={result.Value}");
                 }
             }
         }
-        public void StopListening()
-        {
-            _cts.Cancel();
-        }
-
     }
 }

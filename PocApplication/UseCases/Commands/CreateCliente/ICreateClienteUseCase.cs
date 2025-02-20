@@ -1,5 +1,5 @@
 public interface ICreateClienteUseCase{
   
-  Task Execute(CreateClienteDto Value); 
+  Task<Result<Guid>> Execute(CreateClienteDto Value); 
 
 }

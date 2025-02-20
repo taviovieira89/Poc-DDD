@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace PocInfra.Migrations
 {
     [DbContext(typeof(PocContext))]
-    [Migration("20250218134807_ColunaName")]
-    partial class ColunaName
+    [Migration("20250220141509_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using System.IO;
-public class PocContext : DbContext
+public class PocContext : DbContext//ContextDb<PocContext>
 {
     //public PocContext(){}
 

@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v9.0": {
       "PocDomain/1.0.0": {
         "dependencies": {
-          "Toolkit": "1.0.0"
+          "Toolkit": "1.0.1"
         },
         "runtime": {
           "PocDomain.dll": {}
@@ -1110,7 +1110,7 @@
           }
         }
       },
-      "Toolkit/1.0.0": {
+      "Toolkit/1.0.1": {
         "dependencies": {
           "Confluent.Kafka": "2.8.0",
           "MediatR": "12.4.1",
@@ -1122,8 +1122,8 @@
         },
         "runtime": {
           "lib/net9.0/ExampleToolKit.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "1.0.1.0",
+            "fileVersion": "1.0.1.0"
           }
         }
       },
@@ -1759,12 +1759,12 @@
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
-    "Toolkit/1.0.0": {
+    "Toolkit/1.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hlYeQKKhEUX8J5yIXnC/Thm7v8L/cakX6qJEsSR4d3O6WxMAkLN5zrtaxH3IDZqL/Mb9JOo+RV4YFEHhCd0VMQ==",
-      "path": "toolkit/1.0.0",
-      "hashPath": "toolkit.1.0.0.nupkg.sha512"
+      "sha512": "sha512-IHHUyrNqbldUoGdpjHmMk+p8LGVqHqo+yudS9NRu04CPXmsEa+f4r1YWb39mOS1xbni/o0Iw5lCW+5VGMiihLg==",
+      "path": "toolkit/1.0.1",
+      "hashPath": "toolkit.1.0.1.nupkg.sha512"
     },
     "ZstdSharp.Port/0.7.3": {
       "type": "package",

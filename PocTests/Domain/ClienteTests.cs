@@ -21,7 +21,9 @@ namespace PocTests
         [Fact]
         public void Cliente_Deve_Ser_Maior_Idade()
         {
-            var cliente = Cliente.Create(new Name("João Silva"), new BirthDate(DateTime.Today.AddYears(-20)));
+            var clienteResult = Cliente.Create(new Name("João Silva"), new BirthDate(DateTime.Today.AddYears(-20)));
+            var cliente = clienteResult.Value;
+
             Assert.True(cliente.MaiorIdade());
         }
     }

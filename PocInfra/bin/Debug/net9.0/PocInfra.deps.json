@@ -15,7 +15,7 @@
           "Microsoft.Extensions.Configuration.FileExtensions": "9.0.2",
           "Microsoft.Extensions.Configuration.Json": "9.0.2",
           "PocDomain": "1.0.0",
-          "Toolkit": "1.0.1"
+          "Toolkit": "1.0.3"
         },
         "runtime": {
           "PocInfra.dll": {}
@@ -1531,7 +1531,7 @@
           }
         }
       },
-      "Toolkit/1.0.1": {
+      "Toolkit/1.0.3": {
         "dependencies": {
           "Confluent.Kafka": "2.8.0",
           "MediatR": "12.4.1",
@@ -1543,8 +1543,8 @@
         },
         "runtime": {
           "lib/net9.0/ExampleToolKit.dll": {
-            "assemblyVersion": "1.0.1.0",
-            "fileVersion": "1.0.1.0"
+            "assemblyVersion": "1.0.3.0",
+            "fileVersion": "1.0.3.0"
           }
         }
       },
@@ -1558,7 +1558,7 @@
       },
       "PocDomain/1.0.0": {
         "dependencies": {
-          "Toolkit": "1.0.1"
+          "Toolkit": "1.0.3"
         },
         "runtime": {
           "PocDomain.dll": {
@@ -2352,12 +2352,12 @@
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
-    "Toolkit/1.0.1": {
+    "Toolkit/1.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IHHUyrNqbldUoGdpjHmMk+p8LGVqHqo+yudS9NRu04CPXmsEa+f4r1YWb39mOS1xbni/o0Iw5lCW+5VGMiihLg==",
-      "path": "toolkit/1.0.1",
-      "hashPath": "toolkit.1.0.1.nupkg.sha512"
+      "sha512": "sha512-nv0lnWrP1EIlO23R4c1fuPgUPZqm7bOS35MlDYiABD9X0rSfXmMN0hg+Vtnm9A3eECNctUYf6LD6cPJwKqY+fw==",
+      "path": "toolkit/1.0.3",
+      "hashPath": "toolkit.1.0.3.nupkg.sha512"
     },
     "ZstdSharp.Port/0.7.3": {
       "type": "package",

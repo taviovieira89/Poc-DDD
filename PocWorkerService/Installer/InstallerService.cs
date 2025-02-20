@@ -7,18 +7,46 @@ using System.Data;
 using System.Reflection;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore.Design;
+using PocWorkerService.Consumer;
 public static class InstallerService
 {
-    public static IServiceCollection AddServices(
-                  this IServiceCollection services,
-                  IConfiguration configuration)
+  public static IServiceCollection AddServices(
+                this IServiceCollection services,
+                IConfiguration configuration)
+  {
+
+    var connectionString = configuration.GetConnectionString("DefaultConnection");
+
+    services.AddDbContext<PocContext>(options => options.UseSqlServer(connectionString));
+
+    var kafkaConfig = configuration.GetSection("Kafka").Get<IntegrationEvent>();
+
+    services.AddSingleton(kafkaConfig!); // Adiciona a configuração como Singleton
+                                         // Registra consumidores específicos
+    services.AddScoped<IKafkaConsumer<IntegrationEvent>, ClienteConsumer>();
+    services.AddScoped<ClienteEnvelope>();
+    services.AddTransient<ResultConsumer>();
+    services.AddScoped<IClienteRepository, ClienteRepository>();
+    services.AddScoped(typeof(IRequestHandler<KafkaMessageReceived<IntegrationEvent>>), typeof(KafkaMessageHandler<IntegrationEvent>));
+
+    services.AddScoped<IUnitOfWork>(sp =>
+{
+var pocContext = sp.GetRequiredService<PocContext>();
+var mediator = sp.GetRequiredService<IMediator>();
+  //var mongoDbContext = sp.GetRequiredService<MongoDbContext>();
+
+return new UnitOfWork<PocContext>(pocContext, mediator, null!);
+});
+
+    var myhandlers = AppDomain.CurrentDomain.Load("PocInfra");
+    services.AddMediatR(cfg =>
     {
-       var kafkaConfig = configuration.GetSection("Kafka").Get<IntegrationEvent>();
+      cfg.RegisterServicesFromAssemblies(myhandlers);
+    });
 
-        services.AddSingleton(kafkaConfig!); // Adiciona a configuração como Singleton
+    services.AddValidatorsFromAssembly(Assembly.Load("PocApplication"));
 
-        services.AddScoped<ClienteEnvelope>();
-      return services;
-    }
+    return services;
+  }
 
 }
