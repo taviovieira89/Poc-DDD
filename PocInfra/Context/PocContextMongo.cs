@@ -1,6 +1,9 @@
+using MongoDB.Driver;
+using PocDomain.Aggregate.Cliente;
+
 public class PocContextMongo : MongoDbContext
 {
-    public PocContextMongo() : base(null, null) { }
-
-    // Sobrescreva métodos aqui se necessário, mas eles podem estar vazios
+    public IMongoCollection<Cliente> Clientes => GetCollection<Cliente>("Clientes");
+    public PocContextMongo(string Connectionstrings, string databaseName) : base(Connectionstrings, databaseName) { }
+    public PocContextMongo() : base(null!, null!) { }
 }
