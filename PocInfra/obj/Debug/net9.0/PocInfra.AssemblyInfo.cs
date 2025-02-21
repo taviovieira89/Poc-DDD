@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PocInfra")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+953bf4f1fd36b8e119a182f6defdf0e33294f2c3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+81afa0b273763472da8f3adece18952d72c2544b")]
 [assembly: System.Reflection.AssemblyProductAttribute("PocInfra")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PocInfra")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -7,11 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="8.1.0" />
+    <PackageReference Include="Moq" Version="4.20.72" />
     <PackageReference Include="xunit" Version="2.9.3" />
   </ItemGroup>
   
   <ItemGroup>
     <ProjectReference Include="..\PocDomain\PocDomain.csproj" />
+    <ProjectReference Include="..\PocApplication\PocApplication.csproj" />
   </ItemGroup>
 
 </Project>

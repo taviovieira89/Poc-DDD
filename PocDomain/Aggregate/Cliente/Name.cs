@@ -8,7 +8,18 @@ public record Name
         {
             throw new ArgumentException("O nome não pode estar vazio ou conter apenas espaços em branco.", nameof(value));
         }
-        
+
+        if (value.Count() < 2)
+        {
+            throw new ArgumentException("O nome não pode ser muito curto.", nameof(value));
+        }
+
+        if (value.Count() > 100)
+        {
+            throw new ArgumentException("O nome não pode ser muito longo.", nameof(value));
+        }
+
+
         Value = value;
     }
 }

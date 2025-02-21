@@ -22,11 +22,13 @@ public class CreatedClienteDomainHandler : INotificationHandler<CreateClienteDom
     public async Task Handle(CreateClienteDomain notification, CancellationToken cancellationToken)
     {
         _logger.LogInformation("Iniciando o evento de enviar a mensagem pra o kafka.");
+        _logger.LogInformation($"O Idcliente : {notification.IdCliente} para o envio no Kafka.");
         var clienteExiste = Task.Run(() => _repository.GetAllAsync()).Result.Where(x => x.IdCliente == notification.IdCliente).Any();
 
         if (!clienteExiste)
         {
             _logger.LogInformation($"Cliente {notification.IdCliente} não existe");
+            return;
         }
 
         _logger.LogInformation($"O Topico é {_envelope.Topic}");
