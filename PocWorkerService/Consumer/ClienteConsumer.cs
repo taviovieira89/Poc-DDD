@@ -17,8 +17,10 @@ namespace PocWorkerService.Consumer
         IObterClienteUseCase obterClienteUseCase,
         IMessageMapper<ObterClienteDto> mapper)
         {
-            _consumer = new ResultConsumer(ClienteEnvelope.PassValue(envelope));
             _logger = logger;
+            _logger.LogInformation("$ Entrou no ClienteConsumer.");
+            _consumer = new ResultConsumer(ClienteEnvelope.PassValue(envelope));
+
             _obterClienteUseCase = obterClienteUseCase;
             _mapper = mapper;
             _logger.LogInformation($"Topic : {envelope.Topic},GroupId: {envelope.GroupId}, BootstrapServers: {envelope.BootstrapServers}");
@@ -26,15 +28,12 @@ namespace PocWorkerService.Consumer
 
         public async Task ConsumeAsync(IntegrationEvent message, CancellationToken cancellationToken)
         {
-            while (!cancellationToken.IsCancellationRequested)
-            {
-                var result = await _consumer.ConsumeAndReturn(cancellationToken);
+            var result = await _consumer.ConsumeAndReturn(cancellationToken);
 
-                if (result != null)
-                {
-                    _logger.LogInformation($"[ClienteConsumer] Mensagem processada: Key={result.Key}, Value={result.Value}");
-                    await _obterClienteUseCase.Execute(_mapper.MapToDto(result.Value));
-                }
+            if (result != null)
+            {
+                _logger.LogInformation($"[ClienteConsumer] Mensagem processada: Key={result.Key}, Value={result.Value}");
+                await _obterClienteUseCase.Execute(_mapper.MapToDto(result.Value));
             }
         }
     }

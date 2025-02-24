@@ -16,6 +16,7 @@ public class ObterClienteUseCase : IObterClienteUseCase
     public async Task Execute(ObterClienteDto dto)
     {
         _logger.LogInformation("Executando o caso de uso ObterClienteUseCase");
+        //_logger.LogInformation($"Param Dto: Nome{dto.Nome},BirthDate({dto.Nascimento}.");
         var clienteResult = Cliente.Create(new Name(dto.Nome), new BirthDate(dto.Nascimento));
 
         if (!clienteResult.IsSuccess)
@@ -26,5 +27,7 @@ public class ObterClienteUseCase : IObterClienteUseCase
 
         Cliente cliente = clienteResult.Value;
         _clienteRepository.Add(cliente);
+        _logger.LogInformation("Executado com Sucesso o caso de uso ObterClienteUseCase!!!");
+
     }
 }
