@@ -10,11 +10,11 @@ WORKDIR /app
 COPY NuGet.Config ./
 
 # Copia a pasta packages para o contêiner
-COPY ./packages /app/packages
+COPY ./local-packages /app/local-packages
 
 # Verifica se a pasta packages foi copiada corretamente
-RUN ls -la /app/packages
-RUN ls -la /app/packages/ToolKit/1.0.4/
+RUN ls -la /app/local-packages
+RUN ls -la /app/local-packages/ToolKit/1.0.4/
 
 # Atualiza pacotes do sistema e instala certificados SSL
 RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/lists/*
@@ -35,10 +35,10 @@ RUN dotnet nuget remove source nuget.org || true
 RUN dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
 
 # Remove a fonte packages se ela já existir
-RUN dotnet nuget remove source packages || true
+RUN dotnet nuget remove source local-packages || true
 
 # Adiciona a fonte packages
-RUN dotnet nuget add source /app/packages -n packages
+RUN dotnet nuget add source /app/local-packages -n local-packages
 
 # Copia os arquivos de projeto para restaurar dependências
 COPY PocWebApi/*.csproj ./PocWebApi/
