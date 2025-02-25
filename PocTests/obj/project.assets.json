@@ -1907,7 +1907,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
-          "ToolKit": "1.0.1"
+          "ToolKit": "1.0.4"
         },
         "compile": {
           "bin/placeholder/PocDomain.dll": {}
@@ -4815,6 +4815,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "Azure.Core >= 1.38.0",
       "FluentAssertions >= 8.1.0",
       "Moq >= 4.20.72",
       "PocApplication >= 1.0.0",
@@ -4842,8 +4843,8 @@
         "net9.0"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.pkg.github.com/taviovieira89/index.json": {}
+        "C:\\GIT\\Projetos\\Poc-DDD\\packages": {},
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net9.0": {
@@ -4874,6 +4875,10 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
+          "Azure.Core": {
+            "target": "Package",
+            "version": "[1.38.0, )"
+          },
           "FluentAssertions": {
             "target": "Package",
             "version": "[8.1.0, )"

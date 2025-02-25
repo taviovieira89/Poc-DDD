@@ -21,8 +21,8 @@
           "net9.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.pkg.github.com/taviovieira89/index.json": {}
+          "C:\\GIT\\Projetos\\Poc-DDD\\packages": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
@@ -48,7 +48,7 @@
           "dependencies": {
             "ToolKit": {
               "target": "Package",
-              "version": "[1.0.1, )"
+              "version": "[1.0.4, )"
             }
           },
           "imports": [
@@ -88,8 +88,8 @@
           "net9.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.pkg.github.com/taviovieira89/index.json": {}
+          "C:\\GIT\\Projetos\\Poc-DDD\\packages": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {

@@ -13,7 +13,7 @@ public class ObterClienteUseCase : IObterClienteUseCase
         _clienteRepository = clienteRepository;
     }
 
-    public async Task Execute(ObterClienteDto dto)
+    public Task Execute(ObterClienteDto dto)
     {
         _logger.LogInformation("Executando o caso de uso ObterClienteUseCase");
         //_logger.LogInformation($"Param Dto: Nome{dto.Nome},BirthDate({dto.Nascimento}.");
@@ -22,12 +22,12 @@ public class ObterClienteUseCase : IObterClienteUseCase
         if (!clienteResult.IsSuccess)
         {
             _logger.LogWarning($"Falha ao criar cliente: {clienteResult.Error}");
-            return;
+            return Task.CompletedTask;
         }
 
         Cliente cliente = clienteResult.Value;
         _clienteRepository.Add(cliente);
         _logger.LogInformation("Executado com Sucesso o caso de uso ObterClienteUseCase!!!");
-
+        return Task.CompletedTask;
     }
 }

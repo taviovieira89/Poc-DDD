@@ -21,6 +21,7 @@
           "net9.0"
         ],
         "sources": {
+          "C:\\GIT\\Projetos\\Poc-DDD\\packages": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://nuget.pkg.github.com/taviovieira89/index.json": {}
         },
@@ -48,7 +49,7 @@
           "dependencies": {
             "ToolKit": {
               "target": "Package",
-              "version": "[1.0.1, )"
+              "version": "[1.0.4, )"
             }
           },
           "imports": [
