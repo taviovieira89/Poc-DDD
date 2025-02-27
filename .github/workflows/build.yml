@@ -19,6 +19,7 @@ jobs:
         
     - name: Setup NuGet
       run: |
+        dotnet nuget remove source github
         dotnet nuget add source --username taviovieira89 --password ${{ secrets.NUGET_AUTH_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/taviovieira89/index.json"
         
     - name: Restore dependencies
