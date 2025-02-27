@@ -1,7 +1,11 @@
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
 namespace PocDomain.Aggregate.Cliente;
 
 public class Cliente : AggregateRoot
 {
+    [BsonRepresentation(BsonType.String)]
      public Guid IdCliente { get; private set; }
 
      public Name Nome { get; private set; } = default!;

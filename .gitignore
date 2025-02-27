@@ -362,6 +362,5 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsdNuGet.Config
 
-echo "bin/" >> .gitignore
-echo "obj/" >> .gitignore
-echo "*.dll" >> .gitignore
+
+echo "NuGet.Config" >> .gitignore

@@ -3,12 +3,10 @@ name: Build and Test .NET
 on:
   push:
     branches:
-      - main
-      - develop
+      - v2
   pull_request:
     branches:
-      - main
-      - develop
+      - v2
 
 jobs:
   build:
@@ -42,15 +40,20 @@ jobs:
         options: --health-cmd "kafka-topics --bootstrap-server localhost:9092 --list || exit 1" --health-interval 10s --health-timeout 5s --health-retries 5
 
       sqlserver:
-        image: mcr.microsoft.com/mssql/server:latest
+        image: mcr.microsoft.com/mssql/server:2019-latest
         ports:
           - 1433:1433
         env:
           ACCEPT_EULA: "Y"
-          SA_PASSWORD: "123Passw0rd"
-          MSSQL_PID: "Express"
-        options: --health-cmd "/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P '123Passw0rd' -Q 'SELECT 1'" --health-interval 10s --health-timeout 5s --health-retries 3
-
+          MSSQL_SA_PASSWORD: "Password123!"
+          MSSQL_PID: "Developer"
+        options: >-
+          --health-cmd "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'Password123!' -Q 'SELECT 1'"
+          --health-interval 30s
+          --health-timeout 40s
+          --health-retries 15
+          --health-start-period 40s  
+  
       mongodb:
         image: mongo:latest
         ports:
