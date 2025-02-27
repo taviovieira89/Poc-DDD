@@ -45,15 +45,20 @@ jobs:
           - 1433:1433
         env:
           ACCEPT_EULA: "Y"
-          MSSQL_SA_PASSWORD: "Password123!"
+          SA_PASSWORD: "YourStrong@Passw0rd"
           MSSQL_PID: "Developer"
+          MSSQL_TCP_PORT: "1433"
         options: >-
-          --health-cmd "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'Password123!' -Q 'SELECT 1'"
-          --health-interval 30s
-          --health-timeout 40s
-          --health-retries 15
-          --health-start-period 40s  
-  
+          --name sql-server
+          --hostname sql-server
+          --health-cmd "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'YourStrong@Passw0rd' -Q 'SELECT 1' || exit 1"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+          --health-start-period 10s
+          --memory 2048MB
+          --cpus 2  
+          
       mongodb:
         image: mongo:latest
         ports:
