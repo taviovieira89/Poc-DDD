@@ -6,12 +6,12 @@ public record BirthDate
     {
         if (value == default)
         {
-            throw new ArgumentException("A data de nascimento não pode ser inválida.", nameof(value));
+            throw new ArgumentException($"A data de nascimento {value.ToString("dd/MM/yyyy")} não pode ser inválida.");
         }
 
         if (value > DateTime.Now)
         {
-            throw new ArgumentException("A data de nascimento não pode ser maior que a data atual.", nameof(value));
+            throw new ArgumentException($"A data de nascimento {value.ToString("dd/MM/yyyy")} não pode ser maior que a data atual.");
         }
 
         Value = value;

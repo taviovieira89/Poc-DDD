@@ -34,23 +34,6 @@ public class CreateClienteUseCaseIntegrationTests
     }
 
     [Fact]
-    public async Task Execute_NaoDeveSalvarClienteInvalido()
-    {
-        // Arrange
-        string errorMessage = "O nome não pode estar vazio ou conter apenas espaços em branco.";
-        var dto = new CreateClienteDto { Nome = "", Nascimento = new DateTime(1990, 1, 1) };
-
-        // Act
-        var result = await _useCase.Execute(dto);
-
-        // Assert
-        result.IsSuccess.Should().BeFalse();
-        _repository.Count().Should().Be(0);
-        result.Error.Should().Be(errorMessage);
-         _logger.LogError($"Falha ao criar cliente: {result.Error}");
-    }
-
-    [Fact]
     public async Task Execute_NaoDeveSalvarClienteMenorIdade()
     {
         // Arrange

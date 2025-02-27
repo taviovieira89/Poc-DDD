@@ -285,9 +285,17 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Azure.Core": {
+              "target": "Package",
+              "version": "[1.38.0, )"
+            },
             "FluentAssertions": {
               "target": "Package",
               "version": "[8.1.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.13.0, )"
             },
             "Moq": {
               "target": "Package",
@@ -296,6 +304,12 @@
             "xunit": {
               "target": "Package",
               "version": "[2.9.3, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.2, )"
             }
           },
           "imports": [
