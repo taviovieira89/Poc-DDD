@@ -46,11 +46,12 @@ jobs:
           MSSQL_SA_PASSWORD: 123Passw0rd
           MSSQL_PID: Developer
         options: >-
-          --health-cmd="/opt/mssql-tools/bin/sqlcmd -S 127.0.0.1,1433 -U sa -P 123Passw0rd -Q 'SELECT 1'"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=5
-          --health-start-period=20s      
+           --health-cmd="/opt/mssql-tools/bin/sqlcmd -S localhost,1433 -U sa -P 123Passw0rd -Q 'SELECT 1'"
+           --health-interval=20s
+           --health-timeout=10s
+           --health-retries=10
+           --health-start-period=60s
+           --memory=2g     
           
       mongodb:
         image: 'mongo:latest'
