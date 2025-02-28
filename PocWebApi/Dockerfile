@@ -30,14 +30,20 @@ ENV MONGO_INITDB_ROOT_PASSWORD=admin123
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS builder
 WORKDIR /src
 
-# First authenticate with GitHub
+#RUN dotnet nuget remove source github
+# Add debug logging
+RUN echo "Starting GitHub package authentication..."
+RUN echo "Current directory: $(pwd)"
+RUN echo "Contents of /run/secrets: $(ls -la /run/secrets)"
+
+# Original authentication command
 RUN --mount=type=secret,id=gh_token \
-  export GITHUB_TOKEN="$(cat /run/secrets/gh_token)" && \
-  dotnet nuget add source https://nuget.pkg.github.com/taviovieira89/index.json \
-  --name github \
-  --username taviovieira89 \
-  --password $GITHUB_TOKEN \
-  --store-password-in-clear-text
+    export GITHUB_TOKEN="$(cat /run/secrets/gh_token)" && \
+    dotnet nuget add source https://nuget.pkg.github.com/taviovieira89/index.json \
+    --name github \
+    --username taviovieira89 \
+    --password $GITHUB_TOKEN \
+    --store-password-in-clear-text
 
 COPY ["PocWebApi/PocWebApi.csproj", "PocWebApi/"]
 COPY ["PocDomain/PocDomain.csproj", "PocDomain/"]
