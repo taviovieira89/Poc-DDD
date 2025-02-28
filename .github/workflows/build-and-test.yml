@@ -38,19 +38,20 @@ jobs:
           exit 1" --health-interval 10s --health-timeout 5s --health-retries 5
 
       sqlserver:
-        image: mcr.microsoft.com/mssql/server:latest
+        image: mcr.microsoft.com/mssql/server:2022-latest
         ports:
           - 1433:1433
         env:
           ACCEPT_EULA: Y
-          SA_PASSWORD : 123Passw0rd
-          MSSQL_PID: Express
+          MSSQL_SA_PASSWORD: 123Passw0rd
+          MSSQL_PID: Developer
         options: >-
-          --health-cmd="/opt/mssql-tools/bin/sqlcmd -S localhost,1433 -U sa -P 123Passw0rd -Q 'SELECT 1'"
-          --health-interval=5s
-          --health-timeout=3s
-          --health-retries=3
-          --health-start-period=5s          
+          --health-cmd="/opt/mssql-tools/bin/sqlcmd -S 127.0.0.1,1433 -U sa -P 123Passw0rd -Q 'SELECT 1'"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+          --health-start-period=20s      
+          
       mongodb:
         image: 'mongo:latest'
         ports:
