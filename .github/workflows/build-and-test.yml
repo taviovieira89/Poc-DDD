@@ -36,19 +36,22 @@ jobs:
         options: >-
           --health-cmd "kafka-topics --bootstrap-server localhost:9092 --list ||
           exit 1" --health-interval 10s --health-timeout 5s --health-retries 5
+
       sqlserver:
-        image: 'mcr.microsoft.com/mssql/server:latest'
+        image: mcr.microsoft.com/mssql/server:latest
         ports:
-          - '1433:1433'
+          - 1433:1433
         env:
-          ACCEPT_EULA: 'Y'
-          SA_PASSWORD: 123Passw0rd
+          ACCEPT_EULA: Y
+          MSSQL_SA_PASSWORD: 123Passw0rd
           MSSQL_PID: Express
         options: >-
-          --name=sqlserver  --platform=linux/amd64 --init
-          --health-cmd="/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P
-          '123Passw0rd' -Q 'SELECT 1'" --health-interval=5s --health-timeout=3s
-          --health-retries=3 --health-start-period=5s 
+          --health-cmd="/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 123Passw0rd -Q 'SELECT 1'"
+          --health-interval=5s
+          --health-timeout=3s
+          --health-retries=3
+          --health-start-period=5s
+          
       mongodb:
         image: 'mongo:latest'
         ports:
