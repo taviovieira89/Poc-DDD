@@ -2227,7 +2227,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
-          "ToolKit": "1.0.1"
+          "ToolKit": "1.0.4"
         },
         "compile": {
           "bin/placeholder/PocDomain.dll": {}
