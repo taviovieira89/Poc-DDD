@@ -74,6 +74,11 @@ jobs:
         with:
           dotnet-version: 9.0.x
 
+      - name: Setup NuGet authentication
+        run: |
+          dotnet nuget add source --username USERNAME --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/taviovieira89/index.json"
+    
+
       - name: Restaurar dependências
         run: dotnet restore
 
@@ -82,3 +87,5 @@ jobs:
 
       - name: Rodar os testes
         run: dotnet test --no-build --configuration Release --verbosity normal
+
+    
