@@ -43,7 +43,7 @@ jobs:
           - 1433:1433
         env:
           ACCEPT_EULA: Y
-          MSSQL_SA_PASSWORD: 123Passw0rd
+          SA_PASSWORD : 123Passw0rd
           MSSQL_PID: Express
         options: >-
           --health-cmd="/opt/mssql-tools/bin/sqlcmd -S localhost,1433 -U sa -P 123Passw0rd -Q 'SELECT 1'"
