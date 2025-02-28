@@ -46,12 +46,11 @@ jobs:
           MSSQL_SA_PASSWORD: 123Passw0rd
           MSSQL_PID: Express
         options: >-
-          --health-cmd="/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 123Passw0rd -Q 'SELECT 1'"
+          --health-cmd="/opt/mssql-tools/bin/sqlcmd -S localhost,1433 -U sa -P 123Passw0rd -Q 'SELECT 1'"
           --health-interval=5s
           --health-timeout=3s
           --health-retries=3
-          --health-start-period=5s
-          
+          --health-start-period=5s          
       mongodb:
         image: 'mongo:latest'
         ports:
