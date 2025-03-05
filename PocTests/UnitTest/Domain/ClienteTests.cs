@@ -12,6 +12,18 @@ namespace PocTests
         }
 
         [Fact]
+        public void Nome_Deve_Lancar_Excecao_Se_Minimo_Caracteres()
+        {
+            Assert.Throws<ArgumentException>(() => new Name("o"));
+        }
+
+        [Fact]
+        public void Nome_Deve_Lancar_Excecao_Se_Maximo_Caracteres()
+        {
+            Assert.Throws<ArgumentException>(() => new Name(new string('A', 101)));
+        }
+
+        [Fact]
         public void Nome_Deve_Ser_Valido()
         {
             var nome = new Name("João Silva");
