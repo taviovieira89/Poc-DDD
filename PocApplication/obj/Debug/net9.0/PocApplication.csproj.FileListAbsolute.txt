@@ -16,6 +16,10 @@ C:\GIT\Projetos\Poc-Teste\PocApplication\obj\Debug\net9.0\ref\PocApplication.dll
 C:\GIT\Projetos\Poc-Teste\PocApplication\bin\Debug\net9.0\PocInfra.dll
 C:\GIT\Projetos\Poc-Teste\PocApplication\bin\Debug\net9.0\PocInfra.pdb
 C:\GIT\Projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\PocApplication.deps.json
+C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocApplication.GeneratedMSBuildEditorConfig.editorconfig
+C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocApplication.AssemblyInfoInputs.cache
+C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocApplication.AssemblyInfo.cs
+C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocAppli.9AD827FB.Up2Date
 C:\GIT\Projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\PocApplication.dll
 C:\GIT\Projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\PocApplication.pdb
 C:\GIT\Projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\PocDomain.dll
@@ -23,12 +27,8 @@ C:\GIT\Projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\PocInfra.dll
 C:\GIT\Projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\PocDomain.pdb
 C:\GIT\Projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\PocInfra.pdb
 C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocApplication.csproj.AssemblyReference.cache
-C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocApplication.GeneratedMSBuildEditorConfig.editorconfig
-C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocApplication.AssemblyInfoInputs.cache
-C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocApplication.AssemblyInfo.cs
 C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocApplication.csproj.CoreCompileInputs.cache
 C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocApplication.sourcelink.json
-C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocAppli.9AD827FB.Up2Date
 C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocApplication.dll
 C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\refint\PocApplication.dll
 C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocApplication.pdb
