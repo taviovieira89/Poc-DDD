@@ -1,0 +1,26 @@
+name: Build and Restore
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 9.0.x
+        
+    - name: Setup NuGet
+      run: |
+        dotnet nuget remove source github
+        dotnet nuget add source --username taviovieira89 --password ${{ secrets.NUGET_AUTH_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/taviovieira89/index.json"
+        
+    - name: Restore dependencies
+      run: dotnet restore

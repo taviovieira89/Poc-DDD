@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "zv92CPPLypA=",
+=======
+  "dgSpecHash": "pqGawK/piKI=",
+>>>>>>> main
   "success": true,
   "projectFilePath": "C:\\GIT\\Projetos\\Poc-DDD\\PocInfra\\PocInfra.csproj",
   "expectedPackageFiles": [

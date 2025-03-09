@@ -24,60 +24,55 @@ public class ClienteTests
     [Fact]
     public void Create_DeveFalhar_SeNomeForVazio()
     {
-        // Arrange
-        var nome = new Name("");
-        var nascimento = new BirthDate(new DateTime(1990, 5, 15));
-
-        // Act
-        var result = Cliente.Create(nome, nascimento);
+        // Arrange & Act
+        Action act = () => new Name("");
 
         // Assert
-        result.IsSuccess.Should().BeFalse();
-        result.Error.Should().Be("O nome não pode estar vazio ou conter apenas espaços em branco.");
+        act.Should().Throw<ArgumentException>()
+            .WithMessage("O nome não pode estar vazio ou conter apenas espaços em branco.");
     }
 
     [Fact]
     public void Create_DeveFalhar_SeDataDeNascimentoForFutura()
     {
-        // Arrange
-        var nome = new Name("Maria Souza");
-        var nascimento = new BirthDate(DateTime.UtcNow.AddYears(1));
-
-        // Act
-        var result = Cliente.Create(nome, nascimento);
-
+        // Arrange & Act
+        Action act = () => new BirthDate(DateTime.UtcNow.AddYears(1));
         // Assert
-        result.IsSuccess.Should().BeFalse();
-        result.Error.Should().Be("A data de nascimento não pode ser maior que a data atual.");
+        act.Should().Throw<ArgumentException>()
+            .WithMessage($"A data de nascimento {DateTime.UtcNow.AddYears(1).ToString("dd/MM/yyyy")} não pode ser maior que a data atual.");
     }
+
+    [Fact]
+    public void Create_DeveFalhar_SeDataDeNascimentoForInvalida()
+    {
+        // Arrange & Act
+        var dtnasc = DateTime.MinValue;
+        Action act = () => new BirthDate(dtnasc);
+        // Assert
+        act.Should().Throw<ArgumentException>()
+            .WithMessage($"A data de nascimento {dtnasc.ToString("dd/MM/yyyy")} não pode ser inválida.");
+    }
+
 
     [Fact]
     public void Create_DeveFalhar_SeNomeMuitoCurto()
     {
-        // Arrange
-        var nome = new Name("A");
-        var nascimento = new BirthDate(new DateTime(1990, 5, 15));
-
-        // Act
-        var result = Cliente.Create(nome, nascimento);
+        // Arrange & Act
+        Action act = () => new Name("A");
 
         // Assert
-        result.IsSuccess.Should().BeFalse();
-        result.Error.Should().Be("O nome não pode ser muito curto.");
+        act.Should().Throw<ArgumentException>()
+            .WithMessage("O nome não pode ser muito curto.");
     }
 
     [Fact]
     public void Create_DeveFalhar_SeNomeMuitoLongo()
     {
-        // Arrange
-        var nome = new Name(new string('A', 101)); // Nome com 100 caracteres
-        var nascimento = new BirthDate(new DateTime(1990, 5, 15));
-
-        // Act
-        var result = Cliente.Create(nome, nascimento);
+        // Arrange & Act
+        Action act = () => new Name(new string('A', 101));
 
         // Assert
-        result.IsSuccess.Should().BeFalse();
-        result.Error.Should().Be("O nome não pode ser muito longo.");
+        act.Should().Throw<ArgumentException>()
+            .WithMessage("O nome não pode ser muito longo.");
     }
 }

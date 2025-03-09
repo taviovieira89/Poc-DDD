@@ -13,7 +13,7 @@ public class RepositorioMongo<T> : IRepositorioMongo<T> where T : class
 
    public void Add(T entity)
     {
-        _collection.InsertOne(entity);
+        _collection.InsertOneAsync(entity);
     }
 
     public async Task<IEnumerable<T>> GetAllAsync()

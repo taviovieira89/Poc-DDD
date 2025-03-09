@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "fST7DowQ9pc=",
+=======
+  "dgSpecHash": "KoXcQq5rLRQ=",
+>>>>>>> main
   "success": true,
   "projectFilePath": "C:\\GIT\\Projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj",
   "expectedPackageFiles": [

@@ -6,17 +6,17 @@ public record Name
     {
         if (string.IsNullOrWhiteSpace(value))
         {
-            throw new ArgumentException("O nome não pode estar vazio ou conter apenas espaços em branco.", nameof(value));
+            throw new ArgumentException("O nome não pode estar vazio ou conter apenas espaços em branco.");
         }
 
         if (value.Count() < 2)
         {
-            throw new ArgumentException("O nome não pode ser muito curto.", nameof(value));
+            throw new ArgumentException("O nome não pode ser muito curto.");
         }
 
         if (value.Count() > 100)
         {
-            throw new ArgumentException("O nome não pode ser muito longo.", nameof(value));
+            throw new ArgumentException("O nome não pode ser muito longo.");
         }
 
 

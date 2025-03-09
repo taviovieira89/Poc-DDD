@@ -15,12 +15,9 @@ public class ObterClienteUseCase : IObterClienteUseCase
 
     public Task Execute(ObterClienteDto dto)
     {
-        _logger.LogInformation("Executando o caso de uso ObterClienteUseCase");
-        //_logger.LogInformation($"Param Dto: Nome{dto.Nome},BirthDate({dto.Nascimento}.");
-        var clienteResult = Cliente.Create(new Name(dto.Nome), new BirthDate(dto.Nascimento));
-
-        if (!clienteResult.IsSuccess)
+        try
         {
+<<<<<<< HEAD
             _logger.LogWarning($"Falha ao criar cliente: {clienteResult.Error}");
             return Task.CompletedTask;
         }
@@ -29,5 +26,33 @@ public class ObterClienteUseCase : IObterClienteUseCase
         _clienteRepository.Add(cliente);
         _logger.LogInformation("Executado com Sucesso o caso de uso ObterClienteUseCase!!!");
         return Task.CompletedTask;
+=======
+            _logger.LogInformation("Executando o caso de uso ObterClienteUseCase");
+
+            var retorno = await _clienteRepository.GetAllAsync();
+            if (retorno.Any(x => x.Nome.Value == dto.Nome))
+            {
+                _logger.LogWarning($"Cliente já cadastrado");
+                throw new ClienteException("Cliente já cadastrado");
+            }
+
+            var clienteResult = Cliente.Create(new Name(dto.Nome), new BirthDate(dto.Nascimento));
+
+            if (!clienteResult.IsSuccess)
+            {
+                _logger.LogWarning($"Falha ao criar cliente: {clienteResult.Error}");
+                throw new ClienteException(clienteResult.Error);
+            }
+
+            Cliente cliente = clienteResult.Value;
+            _clienteRepository.Add(cliente);
+            _logger.LogInformation("Executado com Sucesso o caso de uso ObterClienteUseCase!!!");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError($"Erro ao executar o caso de uso ObterClienteUseCase: {ex.Message}");
+            throw new ClienteException($"Erro ao executar o caso de uso ObterClienteUseCase: {ex.Message}", ex);
+        }
+>>>>>>> main
     }
 }

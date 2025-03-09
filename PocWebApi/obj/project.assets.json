@@ -7339,8 +7339,7 @@
       "Serilog.AspNetCore >= 9.0.0",
       "Serilog.Sinks.Console >= 6.0.0",
       "Serilog.Sinks.File >= 6.0.0",
-      "Swashbuckle.AspNetCore >= 7.2.0",
-      "ToolKit >= 1.0.4"
+      "Swashbuckle.AspNetCore >= 7.2.0"
     ]
   },
   "packageFolders": {
@@ -7435,10 +7434,6 @@
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[7.2.0, )"
-          },
-          "ToolKit": {
-            "target": "Package",
-            "version": "[1.0.4, )"
           }
         },
         "imports": [
