@@ -1,38 +1,37 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GIT\\Projetos\\Poc-DDD\\PocTests\\PocTests.csproj": {}
+    "C:\\Git\\projetos\\Poc-DDD\\PocTests\\PocTests.csproj": {}
   },
   "projects": {
-    "C:\\GIT\\Projetos\\Poc-DDD\\PocApplication\\PocApplication.csproj": {
+    "C:\\Git\\projetos\\Poc-DDD\\PocApplication\\PocApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GIT\\Projetos\\Poc-DDD\\PocApplication\\PocApplication.csproj",
+        "projectUniqueName": "C:\\Git\\projetos\\Poc-DDD\\PocApplication\\PocApplication.csproj",
         "projectName": "PocApplication",
-        "projectPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocApplication\\PocApplication.csproj",
-        "packagesPath": "C:\\Users\\tavioaraujo\\.nuget\\packages\\",
-        "outputPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocApplication\\obj\\",
+        "projectPath": "C:\\Git\\projetos\\Poc-DDD\\PocApplication\\PocApplication.csproj",
+        "packagesPath": "C:\\Users\\tavio\\.nuget\\packages\\",
+        "outputPath": "C:\\Git\\projetos\\Poc-DDD\\PocApplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\GIT\\Projetos\\Poc-DDD\\NuGet.Config",
-          "C:\\Users\\tavioaraujo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Git\\projetos\\Poc-DDD\\NuGet.Config",
+          "C:\\Users\\tavio\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\GIT\\Projetos\\Poc-DDD\\packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\GIT\\Projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj": {
-                "projectPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj"
+              "C:\\Git\\projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj": {
+                "projectPath": "C:\\Git\\projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj"
               },
-              "C:\\GIT\\Projetos\\Poc-DDD\\PocInfra\\PocInfra.csproj": {
-                "projectPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocInfra\\PocInfra.csproj"
+              "C:\\Git\\projetos\\Poc-DDD\\PocInfra\\PocInfra.csproj": {
+                "projectPath": "C:\\Git\\projetos\\Poc-DDD\\PocInfra\\PocInfra.csproj"
               }
             }
           }
@@ -47,7 +46,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -68,28 +67,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\GIT\\Projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj": {
+    "C:\\Git\\projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GIT\\Projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj",
+        "projectUniqueName": "C:\\Git\\projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj",
         "projectName": "PocDomain",
-        "projectPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj",
-        "packagesPath": "C:\\Users\\tavioaraujo\\.nuget\\packages\\",
-        "outputPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocDomain\\obj\\",
+        "projectPath": "C:\\Git\\projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj",
+        "packagesPath": "C:\\Users\\tavio\\.nuget\\packages\\",
+        "outputPath": "C:\\Git\\projetos\\Poc-DDD\\PocDomain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\GIT\\Projetos\\Poc-DDD\\NuGet.Config",
-          "C:\\Users\\tavioaraujo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Git\\projetos\\Poc-DDD\\NuGet.Config",
+          "C:\\Users\\tavio\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\GIT\\Projetos\\Poc-DDD\\packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -108,15 +106,15 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
-            "ToolKit": {
+            "MongoDB.Bson": {
               "target": "Package",
-              "version": "[1.0.4, )"
+              "version": "[3.2.1, )"
             }
           },
           "imports": [
@@ -135,36 +133,35 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\GIT\\Projetos\\Poc-DDD\\PocInfra\\PocInfra.csproj": {
+    "C:\\Git\\projetos\\Poc-DDD\\PocInfra\\PocInfra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GIT\\Projetos\\Poc-DDD\\PocInfra\\PocInfra.csproj",
+        "projectUniqueName": "C:\\Git\\projetos\\Poc-DDD\\PocInfra\\PocInfra.csproj",
         "projectName": "PocInfra",
-        "projectPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocInfra\\PocInfra.csproj",
-        "packagesPath": "C:\\Users\\tavioaraujo\\.nuget\\packages\\",
-        "outputPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocInfra\\obj\\",
+        "projectPath": "C:\\Git\\projetos\\Poc-DDD\\PocInfra\\PocInfra.csproj",
+        "packagesPath": "C:\\Users\\tavio\\.nuget\\packages\\",
+        "outputPath": "C:\\Git\\projetos\\Poc-DDD\\PocInfra\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\GIT\\Projetos\\Poc-DDD\\NuGet.Config",
-          "C:\\Users\\tavioaraujo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Git\\projetos\\Poc-DDD\\NuGet.Config",
+          "C:\\Users\\tavio\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\GIT\\Projetos\\Poc-DDD\\packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\GIT\\Projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj": {
-                "projectPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj"
+              "C:\\Git\\projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj": {
+                "projectPath": "C:\\Git\\projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj"
               }
             }
           }
@@ -179,12 +176,20 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Confluent.Kafka": {
+              "target": "Package",
+              "version": "[2.8.0, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.2, )"
@@ -211,9 +216,9 @@
               "target": "Package",
               "version": "[9.0.2, )"
             },
-            "ToolKit": {
+            "MongoDB.Driver": {
               "target": "Package",
-              "version": "[1.0.4, )"
+              "version": "[3.2.1, )"
             }
           },
           "imports": [
@@ -232,39 +237,38 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\GIT\\Projetos\\Poc-DDD\\PocTests\\PocTests.csproj": {
+    "C:\\Git\\projetos\\Poc-DDD\\PocTests\\PocTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GIT\\Projetos\\Poc-DDD\\PocTests\\PocTests.csproj",
+        "projectUniqueName": "C:\\Git\\projetos\\Poc-DDD\\PocTests\\PocTests.csproj",
         "projectName": "PocTests",
-        "projectPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocTests\\PocTests.csproj",
-        "packagesPath": "C:\\Users\\tavioaraujo\\.nuget\\packages\\",
-        "outputPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocTests\\obj\\",
+        "projectPath": "C:\\Git\\projetos\\Poc-DDD\\PocTests\\PocTests.csproj",
+        "packagesPath": "C:\\Users\\tavio\\.nuget\\packages\\",
+        "outputPath": "C:\\Git\\projetos\\Poc-DDD\\PocTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\GIT\\Projetos\\Poc-DDD\\NuGet.Config",
-          "C:\\Users\\tavioaraujo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Git\\projetos\\Poc-DDD\\NuGet.Config",
+          "C:\\Users\\tavio\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\GIT\\Projetos\\Poc-DDD\\packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\GIT\\Projetos\\Poc-DDD\\PocApplication\\PocApplication.csproj": {
-                "projectPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocApplication\\PocApplication.csproj"
+              "C:\\Git\\projetos\\Poc-DDD\\PocApplication\\PocApplication.csproj": {
+                "projectPath": "C:\\Git\\projetos\\Poc-DDD\\PocApplication\\PocApplication.csproj"
               },
-              "C:\\GIT\\Projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj": {
-                "projectPath": "C:\\GIT\\Projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj"
+              "C:\\Git\\projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj": {
+                "projectPath": "C:\\Git\\projetos\\Poc-DDD\\PocDomain\\PocDomain.csproj"
               }
             }
           }
@@ -279,7 +283,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -328,7 +332,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

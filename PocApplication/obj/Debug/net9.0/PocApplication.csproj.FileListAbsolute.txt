@@ -30,18 +30,27 @@ C:\GIT\Projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\PocInfra.dll
 C:\GIT\Projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\PocDomain.pdb
 C:\GIT\Projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\PocInfra.pdb
 C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocApplication.csproj.AssemblyReference.cache
-<<<<<<< HEAD
-C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocApplication.GeneratedMSBuildEditorConfig.editorconfig
-C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocApplication.AssemblyInfoInputs.cache
-C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocApplication.AssemblyInfo.cs
 C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocApplication.csproj.CoreCompileInputs.cache
 C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocApplication.sourcelink.json
-C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocAppli.9AD827FB.Up2Date
-=======
-C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocApplication.csproj.CoreCompileInputs.cache
-C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocApplication.sourcelink.json
->>>>>>> main
 C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocApplication.dll
 C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\refint\PocApplication.dll
 C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\PocApplication.pdb
 C:\GIT\Projetos\Poc-DDD\PocApplication\obj\Debug\net9.0\ref\PocApplication.dll
+C:\Git\projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\ExampleToolKit.dll
+C:\Git\projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Git\projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\Microsoft.Extensions.Hosting.dll
+C:\Git\projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Git\projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Git\projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Git\projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Git\projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+C:\Git\projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\Microsoft.Extensions.Diagnostics.dll
+C:\Git\projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\Microsoft.Extensions.Configuration.UserSecrets.dll
+C:\Git\projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\Microsoft.Extensions.Configuration.CommandLine.dll
+C:\Git\projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\Microsoft.Extensions.Logging.EventLog.dll
+C:\Git\projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\Microsoft.Extensions.Logging.Configuration.dll
+C:\Git\projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\Microsoft.Extensions.Logging.Console.dll
+C:\Git\projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\Microsoft.Extensions.Logging.Debug.dll
+C:\Git\projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\Microsoft.Extensions.Logging.EventSource.dll
+C:\Git\projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\System.Diagnostics.EventLog.dll
+C:\Git\projetos\Poc-DDD\PocApplication\bin\Debug\net9.0\ExampleToolKit.pdb

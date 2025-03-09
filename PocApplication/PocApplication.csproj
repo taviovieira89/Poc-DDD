@@ -10,5 +10,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
+  
+ <ItemGroup>
+    <Reference Include="ToolKit">
+        <HintPath>../libs/ExampleToolKit.dll</HintPath>
+    </Reference>
+   </ItemGroup>
+   
 </Project>

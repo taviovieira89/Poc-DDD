@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Confluent.Kafka" Version="2.8.0" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.2">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -16,11 +18,17 @@
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.2" />
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="9.0.2" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.2" />
-    <PackageReference Include="ToolKit" Version="1.0.4" />
+    <PackageReference Include="MongoDB.Driver" Version="3.2.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\PocDomain\PocDomain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="ToolKit">
+        <HintPath>../libs/ExampleToolKit.dll</HintPath>
+    </Reference>
+   </ItemGroup>
+   
 </Project>

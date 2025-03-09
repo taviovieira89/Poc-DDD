@@ -2,11 +2,11 @@ using Confluent.Kafka;
 
 public class ClienteEnvelope : IntegrationEvent
 {
-    public string BootstrapServers { get; set; } = "localhost:9092";
-    public string GroupId { get; set; } = "PocDDD";
-    public string Topic { get; set; } = "PocDDD-Cliente";
+    public new string BootstrapServers { get; set; } = "localhost:9092";
+    public new string GroupId { get; set; } = "PocDDD";
+    public  new string Topic { get; set; } = "PocDDD-Cliente";
 
-    public AutoOffsetReset AutoOffsetReset { get; set; } = AutoOffsetReset.Earliest;
+    public new AutoOffsetReset AutoOffsetReset { get; set; } = AutoOffsetReset.Earliest;
 
     public ClienteEnvelope(string key, EventData value) : base(key, value)
     {

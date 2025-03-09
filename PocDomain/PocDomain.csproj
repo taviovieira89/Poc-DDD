@@ -6,8 +6,18 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
+  <!-- <ItemGroup>
     <PackageReference Include="ToolKit" Version="1.0.4" />
-  </ItemGroup>
+  </ItemGroup> -->
+
+   <ItemGroup>
+    <Reference Include="ToolKit">
+        <HintPath>../libs/ExampleToolKit.dll</HintPath>
+    </Reference>
+   </ItemGroup>
+
+   <ItemGroup>
+     <PackageReference Include="MongoDB.Bson" Version="3.2.1" />
+   </ItemGroup>
 
 </Project>

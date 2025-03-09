@@ -25,7 +25,12 @@
     <ProjectReference Include="..\PocDomain\PocDomain.csproj" />
     <ProjectReference Include="..\PocInfra\PocInfra.csproj" />
     <ProjectReference Include="..\PocApplication\PocApplication.csproj" />
-    <!-- <ProjectReference Include="..\PocCrossCutting\PocCrossCutting.csproj" /> -->
   </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ToolKit">
+        <HintPath>../libs/ExampleToolKit.dll</HintPath>
+    </Reference>
+   </ItemGroup>
 
 </Project>

@@ -61,9 +61,5 @@ public class Repositorio<T> : IRepositories<T> where T : class
         return _context.Set<T>().Find(id)!;
     }
 
-    public async Task<T> GetByIdAsync(object id)
-    {
-        return await _context.Set<T>().FindAsync(id);
-    }
-
+    public async Task<T> GetByIdAsync(object id) => await _context.Set<T>().FindAsync(id) ?? throw new InvalidOperationException("Entity not found");
 }

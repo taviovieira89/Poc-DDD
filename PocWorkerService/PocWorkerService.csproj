@@ -14,11 +14,16 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.2" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.2" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.2" />
-    <PackageReference Include="Toolkit" Version="1.0.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\PocApplication\PocApplication.csproj" />
     <ProjectReference Include="..\PocInfra\PocInfra.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ToolKit">
+        <HintPath>../libs/ExampleToolKit.dll</HintPath>
+    </Reference>
+   </ItemGroup>
 </Project>
