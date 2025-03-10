@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PocDomain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ebbcd8bec259175ca8ff301b5c8052018777929")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a2251165e2144ed5be81cf42884cf543f438333")]
 [assembly: System.Reflection.AssemblyProductAttribute("PocDomain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PocDomain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

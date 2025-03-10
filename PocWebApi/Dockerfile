@@ -51,10 +51,10 @@ RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/
 RUN update-ca-certificates
 
 # Ignora erros de certificado SSL (apenas para desenvolvimento)
-ENV NUGET_SSL_VERIFY false
+#ENV NUGET_SSL_VERIFY false
 
 # Aumenta o timeout do NuGet (opcional)
-ENV NUGET_REQUEST_TIMEOUT 600
+#ENV NUGET_REQUEST_TIMEOUT 600
 
 # Remove a fonte nuget.org se ela já existir
 RUN dotnet nuget remove source nuget.org || true
@@ -67,5 +67,9 @@ FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
 WORKDIR /app
 
 COPY --from=builder /app/publish .
+
+# Expondo a porta 80
+EXPOSE 8200
+
 ENTRYPOINT ["dotnet", "PocWebApi.dll"]
 
