@@ -1,0 +1,3 @@
+[submodule "WebSocketChat"]
+	path = WebSocketChat
+	url = https://github.com/taviovieira89/WebSocketChat.git
