@@ -27,6 +27,7 @@ public static class FeatureInstaller
     services.AddSingleton(kafkaConfig!); // Adiciona a configuração como Singleton
 
     services.AddScoped<ClienteEnvelope>();
+    services.AddScoped<IValidator<CreateClienteDto>, CreateClienteDtoValidator>();
 
     // Registrar IDbConnection como uma instância única
     services.AddSingleton<IDbConnection>(provider =>

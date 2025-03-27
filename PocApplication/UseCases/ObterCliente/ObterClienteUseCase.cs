@@ -15,33 +15,20 @@ public class ObterClienteUseCase : IObterClienteUseCase
 
     public async Task Execute(ObterClienteDto dto)
     {
-        try
+        var retorno = await _clienteRepository.GetAllAsync();
+        if (retorno.Any(x => x.Nome.Value == dto.Nome))
         {
-            _logger.LogInformation("Executando o caso de uso ObterClienteUseCase");
-
-            var retorno = await _clienteRepository.GetAllAsync();
-            if (retorno.Any(x => x.Nome.Value == dto.Nome))
-            {
-                _logger.LogWarning($"Cliente já cadastrado");
-                throw new ClienteException("Cliente já cadastrado");
-            }
-
-            var clienteResult = Cliente.Create(new Name(dto.Nome), new BirthDate(dto.Nascimento));
-
-            if (!clienteResult.IsSuccess)
-            {
-                _logger.LogWarning($"Falha ao criar cliente: {clienteResult.Error}");
-                throw new ClienteException(clienteResult.Error);
-            }
-
-            Cliente cliente = clienteResult.Value;
-            _clienteRepository.Add(cliente);
-            _logger.LogInformation("Executado com Sucesso o caso de uso ObterClienteUseCase!!!");
+            throw new ClienteException("Cliente já cadastrado");
         }
-        catch (Exception ex)
+
+        var clienteResult = Cliente.Create(new Name(dto.Nome), new BirthDate(dto.Nascimento));
+
+        if (!clienteResult.IsSuccess)
         {
-            _logger.LogError($"Erro ao executar o caso de uso ObterClienteUseCase: {ex.Message}");
-            throw new ClienteException($"Erro ao executar o caso de uso ObterClienteUseCase: {ex.Message}", ex);
+            throw new ClienteException(clienteResult.Error);
         }
+
+        Cliente cliente = clienteResult.Value;
+        _clienteRepository.Add(cliente);
     }
 }

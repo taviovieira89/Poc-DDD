@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using PocDomain.Aggregate.Cliente;
+using FluentValidation;
 
 namespace PocWebApi.Controllers
 {
@@ -12,39 +13,38 @@ namespace PocWebApi.Controllers
         private readonly ICreateClienteUseCase _createClienteUseCase;
         private readonly ILogger<ClienteController> _logger;
 
-        public ClienteController(ICreateClienteUseCase createClienteUseCase, ILogger<ClienteController> logger)
+        private readonly IValidator<CreateClienteDto> _validator;
+
+        public ClienteController(
+            ICreateClienteUseCase createClienteUseCase,
+         ILogger<ClienteController> logger,
+         IValidator<CreateClienteDto> validator)
         {
             _createClienteUseCase = createClienteUseCase;
             _logger = logger;
+            _validator = validator;
         }
 
         [HttpPost("Create")]
         public async Task<IActionResult> CreateCliente([FromBody] CreateClienteDto createClienteDto)
         {
-            if (createClienteDto == null || string.IsNullOrWhiteSpace(createClienteDto.Nome))
+            var validationResult = await _validator.ValidateAsync(createClienteDto);
+
+            if (!validationResult.IsValid)
             {
-                _logger.LogWarning("Tentativa de criação de cliente com nome vazio.");
-                return BadRequest("O nome do cliente é obrigatório.");
+                _logger.LogWarning($"Falha no clienteDto: {String.Join(',', validationResult.Errors.Select(e => e.ErrorMessage))}");
+                return BadRequest(validationResult.Errors.Select(e => e.ErrorMessage));
+            }
+            var result = await _createClienteUseCase.Execute(createClienteDto);
+
+            if (!result.IsSuccess)
+            {
+                _logger.LogWarning($"Falha ao criar cliente: {result.Error}");
+                return BadRequest(result.Error);
             }
 
-            try
-            {
-                var result = await _createClienteUseCase.Execute(createClienteDto);
-
-                if (!result.IsSuccess)
-                {
-                    _logger.LogWarning($"Falha ao criar cliente: {result.Error}");
-                    return BadRequest(result.Error);
-                }
-
-                _logger.LogInformation($"Cliente criado com sucesso: {result.Value}");
-                return CreatedAtAction(nameof(CreateCliente), new { id = result.Value }, result.Value);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Erro inesperado ao criar cliente.");
-                return StatusCode(500, "Erro inesperado ao criar cliente.");
-            }
+            _logger.LogInformation($"Cliente criado com sucesso: {result.Value}");
+            return CreatedAtAction(nameof(CreateCliente), new { id = result.Value }, result.Value);
         }
 
         [HttpGet("HealthCheck")]

@@ -34,6 +34,8 @@ builder.Services.AddCors(options =>
 
 // Registrar controllers
 builder.Services.AddControllers();
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
 
 var app = builder.Build();
 

@@ -28,12 +28,21 @@ namespace PocWorkerService.Consumer
 
         public async Task ConsumeAsync(IntegrationEvent message, CancellationToken cancellationToken)
         {
-            var result = await _consumer.ConsumeAndReturn(cancellationToken);
-
-            if (result != null)
+            try
             {
-                _logger.LogInformation($"[ClienteConsumer] Mensagem processada: Key={result.Key}, Value={result.Value}");
-                await _obterClienteUseCase.Execute(_mapper.MapToDto(result.Value));
+                var result = await _consumer.ConsumeAndReturn(cancellationToken);
+
+                if (result != null)
+                {
+                    _logger.LogInformation($"[ClienteConsumer] Mensagem processada: Key={result.Key}, Value={result.Value}");
+                    await _obterClienteUseCase.Execute(_mapper.MapToDto(result.Value));
+                }
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogInformation($"Ocorreu um erro ao consumer o cliente: {ex.Message} , mais detalhes: {ex.InnerException!.Message}");
+                throw new Exception($"Ocorreu um erro ao consumer o cliente: {ex.Message}");
             }
         }
     }
