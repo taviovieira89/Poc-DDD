@@ -37,13 +37,13 @@ public class ObterClienteUseCaseIntegrationTests
     {
         // Arrange
         var dto = new ObterClienteDto { Nome = "Joao", Nascimento = new DateTime(2020, 1, 1) };
-        string errorMessage = "Erro ao executar o caso de uso ObterClienteUseCase: Cliente menor de idade";
+        string errorMessage = "Cliente menor de idade";
         // Act
         Func<Task> action = async () => await _useCase.Execute(dto);
 
         // Assert
         _repository.Count().Should().Be(0);
-        await action.Should().ThrowAsync<Exception>()
+        await action.Should().ThrowAsync<ClienteException>()
             .WithMessage(errorMessage);
     }
 
@@ -60,7 +60,7 @@ public class ObterClienteUseCaseIntegrationTests
 
         // Assert
         _repository.Count().Should().BeGreaterThan(0);
-        await action.Should().ThrowAsync<Exception>()
-            .WithMessage($"Erro ao executar o caso de uso ObterClienteUseCase: {errorMessage}");
+        await action.Should().ThrowAsync<ClienteException>()
+            .WithMessage(errorMessage);
     }
 }
